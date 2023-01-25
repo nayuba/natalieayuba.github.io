@@ -2,7 +2,11 @@ import React, { FC } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SocialMediaIcon } from "./Icon";
 
-const SocialMediaNav: FC<{includeTooltips?: boolean}> = ({includeTooltips}) => {
+const SocialMediaNav: FC<{
+  className?: string;
+  includeTooltips?: boolean;
+  large?: boolean;
+}> = ({ className, includeTooltips, large }) => {
   const socials = [
     {
       title: "Github",
@@ -16,11 +20,16 @@ const SocialMediaNav: FC<{includeTooltips?: boolean}> = ({includeTooltips}) => {
     },
   ];
   return (
-    <nav>
+    <nav className={className}>
       <ul className="flex gap-4">
         {socials.map((social) => (
           <li key={social.href}>
-            <SocialMediaIcon title={includeTooltips ? social.title : ""} href={social.href} icon={social.icon} />
+            <SocialMediaIcon
+              title={includeTooltips ? social.title : ""}
+              href={social.href}
+              icon={social.icon}
+              className={large ? "text-3xl" : ""}
+            />
           </li>
         ))}
       </ul>

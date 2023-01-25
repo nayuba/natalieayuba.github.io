@@ -14,7 +14,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import Nav from "@/components/Nav";
+import { Nav, Ham } from "@/components/Nav";
 
 export default function Home() {
   return (
@@ -26,9 +26,9 @@ export default function Home() {
         <link rel="icon" href="/avatar.png" />
       </Head>
       <header className="bg-primary flex flex-col items-center fixed top-0 left-0 right-0 z-[1] drop">
-        <div className="max-w-[1400px] h-[80px] flex justify-between items-center px-10 w-screen">
-          <SocialMediaNav />
-          <a href="#" className="absolute left-[50%] translate-x-[-50%]">
+        <div className="max-w-[1400px] h-[80px] flex justify-between items-center px-6 w-screen">
+          <SocialMediaNav className="hidden lg:block" />
+          <a href="#" className="lg:absolute lg:left-[50%] lg:translate-x-[-50%]">
             <Image
               src="/avatar.png"
               width="50"
@@ -37,37 +37,40 @@ export default function Home() {
             />
           </a>
           <Nav />
+          <Ham />
         </div>
       </header>
       <div className="bg-gradient-to-b from-primary to-white">
-        <main className="px-10 flex flex-col items-center">
+        <main className="px-6 flex flex-col items-center">
 
           {/* Banner */}
-          <section className="w-full max-w-[1400px] min-h-screen flex flex-wrap justify-between items-center gap-4 py-[100px] relative">
+          <section className="w-full max-w-[1400px] flex flex-wrap justify-between items-center gap-4 pb-16 pt-[110px]">
             <div className="flex flex-col gap-4 lowercase">
               <H1 text="Hi, I'm Natalie!" />
+              {/* not showing font-normal */}
               <H3
                 text="I'm a developer and designer."
                 className="font-normal"
               />
-              <BodyText text="And I like to make things look nice on screens :)" />
+              <BodyText text="And I like to make things look nice on screens :)" className="leading-normal" />
             </div>
             <Image
               src="/avatar.png"
               width="500"
               height="500"
               alt="A little illustrated self-portrait!"
+              className="w-full lg:w-[500px]"
             />
-            <Icon
+            {/* <Icon
               href="#about"
-              className="absolute bottom-8 text-2xl left-[50%] translate-x-[-50%]"
+              className="absolute bottom-8 text-3xl left-[50%] translate-x-[-50%]"
               icon={<FaChevronDown />}
-            />
+            /> */}
           </section>
 
           {/* About */}
           <section
-            className="h-screen flex flex-col justify-center items-center gap-6 py-[100px]"
+            className="flex flex-col justify-center items-center pb-16 pt-[110px]"
             id="about"
           >
             <H2 text="About Me" />
@@ -95,7 +98,7 @@ export default function Home() {
           {/* Projects */}
           <section
             id="projects"
-            className="flex flex-col items-center py-[100px] gap-6"
+            className="flex flex-col items-center pb-16 pt-[110px]"
           >
             <H2 text="Some Projects I've Worked On" />
             <Project
@@ -121,9 +124,9 @@ export default function Home() {
               }
               order="right"
             />
-            <div className="flex flex-col items-center py-[100px]">
+            <div className="flex flex-col items-center py-16">
               <H3 text="Logos" className="lowercase" />
-              <div className="flex flex-wrap justify-center pt-[100px] gap-2">
+              <div className="flex flex-wrap justify-center pt-16 gap-2">
                 {[
                   [
                     "Stripped Sets Logo",
@@ -149,10 +152,10 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="px-10 text-center">
+        <footer className="px-6 text-center">
           <div
             id="contact"
-            className="flex flex-col items-center gap-6 py-[100px]"
+            className="flex flex-col items-center py-16"
           >
             <H2 text="Get In Touch" />
             <BodyText
@@ -166,7 +169,7 @@ export default function Home() {
             />
             <a
               href="mailto:natalieayuba@hotmail.com"
-              className="bg-white font-semibold border border-black px-7 py-3 mt-2 hover:shadow-crisp duration-500"
+              className="bg-white font-semibold border border-black px-7 py-3 mt-10 hover:shadow-crisp duration-200 ease-linear"
             >
               Say hi
             </a>

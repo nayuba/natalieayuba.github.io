@@ -20,8 +20,8 @@ const Icon: FC<IconProps> = ({ title, href, icon, external, className }) => (
   </a>
 );
 
-const SocialMediaIcon: FC<IconProps> = ({ title, href, icon }) => (
-  <Icon title={title} href={href} icon={icon} external />
+const SocialMediaIcon: FC<IconProps> = ({ title, href, icon, className }) => (
+  <Icon title={title} href={href} icon={icon} className={className} external />
 );
 
 export { Icon, SocialMediaIcon };

@@ -19,7 +19,7 @@ const Project: FC<ProjectProps> = ({
   order,
 }) => {
   const text = () => (
-    <div className="flex flex-col gap-2  justify-center max-w-[600px]">
+    <div className="flex flex-col gap-2 justify-center max-w-[600px]">
       <H3 text={title} />
       <SecondaryText text={separateList(categories)} />
       <BodyText text={description} />
@@ -50,7 +50,7 @@ const Project: FC<ProjectProps> = ({
   }
 
   return (
-    <div className="flex gap-10 py-[100px] flex-wrap justify-center">
+    <div className="flex gap-10 py-16 flex-wrap justify-center">
       {order === "left" ? (
         <>
           {text()}

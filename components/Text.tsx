@@ -11,23 +11,23 @@ interface LinkTextProps extends TextProps {
 }
 
 function ifClassNameExists(className: string | undefined) {
-  return className ? ` ${className}` : "";
+  return ` ${className}` ?? "";
 }
 
 export const H1: FC<TextProps> = ({ text }) => (
-  <h1 className="font-bold text-7xl">{text}</h1>
+  <h1 className="font-bold text-6xl">{text}</h1>
 );
 
 export const H2: FC<TextProps> = ({ text }) => (
-  <h2 className="font-bold text-6xl lowercase text-center">{text}</h2>
+  <h2 className="font-bold text-5xl lowercase text-center mb-6">{text}</h2>
 );
 
 export const H3: FC<TextProps> = ({ text, className }) => (
-  <h3 className={`font-bold text-4xl${ifClassNameExists(className)}`}>{text}</h3>
+  <h3 className={`h3${ifClassNameExists(className)}`}>{text}</h3>
 );
 
 export const BodyText: FC<TextProps> = ({ text, className }) => (
-  <p className={`text-base leading-8${ifClassNameExists(className)}`}>{text}</p>
+  <p className={`body-text${ifClassNameExists(className)}`}>{text}</p>
 );
 
 export const SecondaryText: FC<TextProps> = ({ text }) => (
