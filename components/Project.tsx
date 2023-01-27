@@ -19,7 +19,7 @@ const Project: FC<ProjectProps> = ({
   order,
 }) => {
   const text = () => (
-    <div className="flex flex-col gap-2 justify-center max-w-[600px]">
+    <div className="flex flex-col gap-2 justify-center max-w-lg">
       <H3 text={title} />
       <SecondaryText text={separateList(categories)} />
       <BodyText text={description} />

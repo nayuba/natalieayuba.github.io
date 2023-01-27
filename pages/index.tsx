@@ -1,9 +1,7 @@
 import LogoImage from "@/components/LogoImage";
 import Project from "@/components/Project";
-import { Icon } from "@/components/Icon";
 import SocialMediaNav from "@/components/SocialMediaNav";
 import {
-  LinkText,
   BodyText,
   H1,
   H2,
@@ -12,9 +10,8 @@ import {
 } from "@/components/Text";
 import Head from "next/head";
 import Image from "next/image";
-import { FaChevronDown } from "react-icons/fa";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import { Nav, Ham } from "@/components/Nav";
+import { Nav } from "@/components/Nav";
 
 export default function Home() {
   return (
@@ -25,10 +22,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/avatar.png" />
       </Head>
-      <header className="bg-primary flex flex-col items-center fixed top-0 left-0 right-0 z-[1] drop">
-        <div className="max-w-[1400px] h-[80px] flex justify-between items-center px-6 w-screen">
+      <header className="bg-primary flex flex-col items-center fixed top-0 left-0 right-0 z-[1] drop ">
+        <div className="h-[80px] flex justify-between px-6 md:px-10 items-center w-screen">
           <SocialMediaNav className="hidden lg:block" />
-          <a href="#" className="lg:absolute lg:left-[50%] lg:translate-x-[-50%]">
+          <a
+            href="#"
+            className="lg:absolute lg:left-[50%] lg:translate-x-[-50%]"
+          >
             <Image
               src="/avatar.png"
               width="50"
@@ -37,35 +37,30 @@ export default function Home() {
             />
           </a>
           <Nav />
-          <Ham />
         </div>
       </header>
       <div className="bg-gradient-to-b from-primary to-white">
-        <main className="px-6 flex flex-col items-center">
-
+        <main className="px-6 md:px-10 flex flex-col items-center">
           {/* Banner */}
-          <section className="w-full max-w-[1400px] flex flex-wrap justify-between items-center gap-4 pb-16 pt-[110px]">
-            <div className="flex flex-col gap-4 lowercase">
+          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pb-16 pt-[110px]">
+            <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
-              {/* not showing font-normal */}
               <H3
                 text="I'm a developer and designer."
                 className="font-normal"
               />
-              <BodyText text="And I like to make things look nice on screens :)" className="leading-normal" />
+              <BodyText
+                text="And I like to make things look nice on screens :)"
+                className="leading-normal"
+              />
             </div>
             <Image
               src="/avatar.png"
               width="500"
               height="500"
               alt="A little illustrated self-portrait!"
-              className="w-full lg:w-[500px]"
+              className="flex-auto lg:flex-initial"
             />
-            {/* <Icon
-              href="#about"
-              className="absolute bottom-8 text-3xl left-[50%] translate-x-[-50%]"
-              icon={<FaChevronDown />}
-            /> */}
           </section>
 
           {/* About */}
@@ -74,22 +69,12 @@ export default function Home() {
             id="about"
           >
             <H2 text="About Me" />
-            <div className="text-justify max-w-[600px]">
+            <div className="text-justify max-w-lg">
               {[
                 "Hi there! I’m Natalie, a full-stack software developer working remotely in Norwich, England. At work, I spend my time designing, coding, and testing, and try to focus my role on creating user-friendly interfaces.",
                 "I consider myself a multi-disciplinarian and dabble in many different forms of creative work including graphic design, illustration, and mobile app development.",
-                <>
-                  Outside of work, I enjoy playing the guitar (check out my
-                  band&nbsp;
-                  <LinkText
-                    text="Lamona"
-                    href="https://www.instagram.com/theylamona/"
-                    external
-                  />
-                  ), world-building in the Sims, and watching an unhealthy
-                  amount of movie commentaries on YouTube.
-                </>,
-              ].map((paragraph: any) => (
+                "Outside of work, I enjoy playing the guitar, world-building in the Sims, and watching an unhealthy amount of movie commentaries on YouTube.",
+              ].map((paragraph: string) => (
                 <BodyText key={paragraph} className="mb-3" text={paragraph} />
               ))}
             </div>
@@ -100,7 +85,7 @@ export default function Home() {
             id="projects"
             className="flex flex-col items-center pb-16 pt-[110px]"
           >
-            <H2 text="Some Projects I've Worked On" />
+            <H2 text="My Projects" />
             <Project
               title="Past app"
               categories={["App Design", "App Development", "Logo Design"]}
@@ -153,10 +138,7 @@ export default function Home() {
         </main>
 
         <footer className="px-6 text-center">
-          <div
-            id="contact"
-            className="flex flex-col items-center py-16"
-          >
+          <div id="contact" className="flex flex-col items-center py-16">
             <H2 text="Get In Touch" />
             <BodyText
               text={

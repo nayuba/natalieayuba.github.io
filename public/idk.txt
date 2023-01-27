@@ -1,0 +1,42 @@
+[brittany]
+header
+  nav
+    logo
+    div: nav-links
+    div: nav-mobile-menu
+      div
+        button: ham
+        aside: sidebar
+          nav: mobile-menu links
+
+[riccardo]
+nav
+  div: nav-content
+    logo
+    button: ham
+    ul: nav-links
+nav: mobile-menu
+  icon: FaTimes
+  ul: mobile-nav-links
+
+
+[sweston]
+header
+  logo
+  div
+    nav-links
+div: mobile header
+  icon
+div: mobile-menu
+
+
+
+[edward]
+nav
+  div: menu-btns
+  div: menu-body
+
+
+
+
+

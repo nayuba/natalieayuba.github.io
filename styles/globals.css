@@ -15,14 +15,27 @@ body {
 }
 
 @layer components {
+  .h1 {
+    @apply font-bold text-6xl md:text-7xl;
+  } 
+
+  .h2 {
+    @apply font-bold text-4xl md:text-6xl lowercase text-center mb-6;
+  } 
+
   .h3 {
-    @apply font-bold text-4xl;
+    @apply font-bold text-3xl md:text-4xl;
   }
 
   .body-text {
     @apply text-base leading-8;
   }
-  .icon {
-    @apply text-xl hover:text-secondary-darker duration-200 ease-icon-in-out;
+
+  .secondary-text {
+    @apply text-sm;
+  }
+
+  .link-text {
+    @apply font-semibold text-secondary-darker hover:underline;
   }
 }
