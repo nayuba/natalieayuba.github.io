@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import SocialMediaNav from "./SocialMediaNav";
 import useHamToggle from "../hooks/useHamToggle";
@@ -24,6 +24,12 @@ const navLinks = [
 
 export const Nav: FC = () => {
   const { isMenuOpen, setIsMenuOpen } = useHamToggle();
+
+  useEffect(() => {
+    isMenuOpen
+      ? (document.documentElement.style.overflow = "hidden")
+      : (document.documentElement.style.overflow = "unset");
+  }, [isMenuOpen]);
 
   return (
     <nav>
@@ -51,7 +57,7 @@ export const Nav: FC = () => {
         <ul
           className={`${
             isMenuOpen ? "left-0" : "left-[-100%]"
-          } transition-[left] w-screen bg-secondary text-dark-grey font-semibold duration-500 fixed flex flex-col h-screen justify-center items-center gap-16 text-3xl lowercase`}
+          } transition-[left] w-screen bg-primary text-dark-grey font-semibold duration-500 fixed flex flex-col h-screen justify-center items-center gap-14 text-2xl lowercase`}
         >
           {navLinks.map((navLink) => (
             <li key={navLink.title}>
@@ -64,7 +70,6 @@ export const Nav: FC = () => {
               </a>
             </li>
           ))}
-          {/* not showing large font size */}
           <SocialMediaNav large />
         </ul>
         <button

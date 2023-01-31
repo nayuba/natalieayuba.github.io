@@ -1,17 +1,12 @@
 import LogoImage from "@/components/LogoImage";
 import Project from "@/components/Project";
 import SocialMediaNav from "@/components/SocialMediaNav";
-import {
-  BodyText,
-  H1,
-  H2,
-  H3,
-  SecondaryText,
-} from "@/components/Text";
+import { BodyText, H1, H2, H3, SecondaryText } from "@/components/Text";
 import Head from "next/head";
 import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Nav } from "@/components/Nav";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,8 +20,8 @@ export default function Home() {
       <header className="bg-primary flex flex-col items-center fixed top-0 left-0 right-0 z-[1] drop ">
         <div className="h-[80px] flex justify-between px-6 md:px-10 items-center w-screen">
           <SocialMediaNav className="hidden lg:block" />
-          <a
-            href="#"
+          <Link
+            href="/"
             className="lg:absolute lg:left-[50%] lg:translate-x-[-50%]"
           >
             <Image
@@ -35,14 +30,14 @@ export default function Home() {
               height="50"
               alt="A little animated self-portrait!"
             />
-          </a>
+          </Link>
           <Nav />
         </div>
       </header>
       <div className="bg-gradient-to-b from-primary to-white">
         <main className="px-6 md:px-10 flex flex-col items-center">
           {/* Banner */}
-          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pb-16 pt-[110px]">
+          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pb-14 pt-[110px]">
             <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
               <H3
@@ -65,7 +60,7 @@ export default function Home() {
 
           {/* About */}
           <section
-            className="flex flex-col justify-center items-center pb-16 pt-[110px]"
+            className="flex flex-col justify-center items-center pb-14 pt-[110px]"
             id="about"
           >
             <H2 text="About Me" />
@@ -83,7 +78,7 @@ export default function Home() {
           {/* Projects */}
           <section
             id="projects"
-            className="flex flex-col items-center pb-16 pt-[110px]"
+            className="flex flex-col items-center pb-14 pt-[110px]"
           >
             <H2 text="My Projects" />
             <Project
@@ -94,19 +89,10 @@ export default function Home() {
               physical activity and resulting fatigue levels to be later
               shared with healthcare providers."
               technologies={["React Native", "Node.js", "Expo"]}
-              images={
-                <>
-                  {["/past-login.png", "/past-calendar.png"].map((src) => (
-                    <Image
-                      key={src}
-                      src={src}
-                      width="260"
-                      height="0"
-                      alt="Past app mockup"
-                    />
-                  ))}
-                </>
-              }
+              images={[
+                ["/past-login.png", "Past app mockup"],
+                ["/past-calendar.png", "Past app mockup"],
+              ]}
               order="right"
             />
             <div className="flex flex-col items-center py-16">

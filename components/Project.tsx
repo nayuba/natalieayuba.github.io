@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 import { BodyText, H3, SecondaryText } from "./Text";
+import Image from "next/image";
 
 export interface ProjectProps {
   title: string;
   description: string;
   categories: string[];
   technologies: string[];
-  images: JSX.Element;
+  images: string[][];
   order: string;
 }
 
@@ -34,8 +35,19 @@ const Project: FC<ProjectProps> = ({
     </div>
   );
 
-  const figures = () => (
-    <div className="flex gap-4 justify-center flex-wrap">{images}</div>
+  const mockups = () => (
+    <div className="flex gap-4">
+      {images.map(([src, alt]) => (
+        <div key={src}>
+          <Image
+            src={src}
+            width={images.length === 1 ? "400" : "185"}
+            height="0"
+            alt={alt}
+          />
+        </div>
+      ))}
+    </div>
   );
 
   function separateList(list: string[]) {
@@ -50,18 +62,13 @@ const Project: FC<ProjectProps> = ({
   }
 
   return (
-    <div className="flex gap-10 py-16 flex-wrap justify-center">
-      {order === "left" ? (
-        <>
-          {text()}
-          {figures()}
-        </>
-      ) : (
-        <>
-          {figures()}
-          {text()}
-        </>
-      )}
+    <div
+      className={`${
+        order === "right" ? "flex-row-reverse " : ""
+      }flex gap-10 py-16 flex-wrap justify-center`}
+    >
+      {text()}
+      {mockups()}
     </div>
   );
 };
