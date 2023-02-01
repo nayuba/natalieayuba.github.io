@@ -20,11 +20,11 @@ export default function Home() {
       <header className="bg-primary flex flex-col items-center fixed left-0 right-0 top-0 z-10 px-6 md:px-10">
         <div className="h-[80px] flex justify-between items-center w-full max-width">
           <Link href="/" className="relative h-14 w-14">
-              <Image
-                src="/avatar.png"
-                fill
-                alt="A little animated self-portrait!"
-              />
+            <Image
+              src="/avatar.png"
+              fill
+              alt="A little animated self-portrait!"
+            />
           </Link>
           <Navbar />
         </div>

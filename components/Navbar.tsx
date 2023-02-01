@@ -46,8 +46,8 @@ const Navbar: FC = () => {
       <div className={"fixed top-0 md:hidden"}>
         <ul
           className={`${
-            isMenuOpen ? "left-0" : "left-[-100%]"
-          } transition-[left] w-screen bg-primary text-dark-grey font-semibold duration-500 fixed flex flex-col h-screen justify-center items-center gap-14 text-2xl lowercase`}
+            isMenuOpen ? "left-0" : "-left-full"
+          } transition-[left] w-full bg-primary text-dark-grey font-semibold duration-500 fixed flex flex-col h-screen justify-center items-center gap-14 text-2xl lowercase`}
         >
           {navLinks.map((navLink) => (
             <li key={navLink.title}>
