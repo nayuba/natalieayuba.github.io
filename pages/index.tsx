@@ -5,7 +5,7 @@ import { BodyText, H1, H2, H3, SecondaryText } from "@/components/Text";
 import Head from "next/head";
 import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import { Nav } from "@/components/Nav";
+import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export default function Home() {
@@ -17,27 +17,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/avatar.png" />
       </Head>
-      <header className="bg-primary flex flex-col items-center fixed top-0 left-0 right-0 z-[1] drop ">
-        <div className="h-[80px] flex justify-between px-6 md:px-10 items-center w-screen">
-          <SocialMediaNav className="hidden lg:block" />
-          <Link
-            href="/"
-            className="lg:absolute lg:left-[50%] lg:translate-x-[-50%]"
-          >
-            <Image
-              src="/avatar.png"
-              width="50"
-              height="50"
-              alt="A little animated self-portrait!"
-            />
+      <header className="bg-primary flex flex-col items-center fixed left-0 right-0 top-0 z-10 px-6 md:px-10">
+        <div className="h-[80px] flex justify-between items-center w-full max-width">
+          <Link href="/" className="relative h-14 w-14">
+              <Image
+                src="/avatar.png"
+                fill
+                alt="A little animated self-portrait!"
+              />
           </Link>
-          <Nav />
+          <Navbar />
         </div>
       </header>
       <div className="bg-gradient-to-b from-primary to-white">
         <main className="px-6 md:px-10 flex flex-col items-center">
           {/* Banner */}
-          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pb-14 pt-[110px]">
+          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pt-28 max-width">
             <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
               <H3
@@ -60,7 +55,7 @@ export default function Home() {
 
           {/* About */}
           <section
-            className="flex flex-col justify-center items-center pb-14 pt-[110px]"
+            className="flex flex-col justify-center items-center pt-28"
             id="about"
           >
             <H2 text="About Me" />
@@ -78,7 +73,7 @@ export default function Home() {
           {/* Projects */}
           <section
             id="projects"
-            className="flex flex-col items-center pb-14 pt-[110px]"
+            className="flex flex-col items-center pt-28 pb-14"
           >
             <H2 text="My Projects" />
             <Project
@@ -95,9 +90,9 @@ export default function Home() {
               ]}
               order="right"
             />
-            <div className="flex flex-col items-center py-16">
+            <div className="flex flex-col items-center pt-14">
               <H3 text="Logos" className="lowercase" />
-              <div className="flex flex-wrap justify-center pt-16 gap-2">
+              <div className="flex flex-wrap justify-center pt-14 gap-2">
                 {[
                   [
                     "Stripped Sets Logo",
@@ -124,7 +119,7 @@ export default function Home() {
         </main>
 
         <footer className="px-6 text-center">
-          <div id="contact" className="flex flex-col items-center py-16">
+          <div id="contact" className="flex flex-col items-center pb-14 pt-28">
             <H2 text="Get In Touch" />
             <BodyText
               text={

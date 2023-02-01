@@ -14,7 +14,7 @@ const Icon: FC<IconProps> = ({ title, href, icon, external, className }) => (
     href={href}
     target={external ? "_blank" : ""}
     rel={external ? "noreferrer" : ""}
-    className={`text-xl hover:text-secondary-darker duration-200 ease-icon-in-out${` ${className}` ?? ""}`}
+    className={`text-xl hover:text-secondary-darker duration-200 ease-slow-in-out${` ${className}` ?? ""}`}
   >
     {icon}
   </a>

@@ -38,4 +38,8 @@ body {
   .link-text {
     @apply font-semibold text-secondary-darker hover:underline;
   }
+
+  .max-width {
+    @apply max-w-[1600px];
+  }
 }

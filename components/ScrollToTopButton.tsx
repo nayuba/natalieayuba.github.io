@@ -24,8 +24,8 @@ const ScrollToTopButton: FC = () => {
       title="Scroll to top"
       onClick={scrollToTop}
       className={`${
-        visible ? "lg:block" : "lg:hidden"
-      } fixed bottom-6 right-6 rounded-full text-2xl text-white bg-secondary p-3 drop-shadow-deep hover:translate-y-[-2px] duration:300 ease-icon-in-out hidden`}
+        visible ? "md:block" : "md:hidden"
+      } fixed bottom-6 right-6 rounded-full text-2xl text-white bg-secondary p-3 drop-shadow-deep hover:translate-y-[-2px] duration:300 ease-slow-in-out hidden`}
     >
       <FaChevronUp />
     </button>

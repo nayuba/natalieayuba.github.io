@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export interface ProjectProps {
   title: string;
-  description: string;
   categories: string[];
+  description: string;
   technologies: string[];
   images: string[][];
   order: string;
@@ -13,8 +13,8 @@ export interface ProjectProps {
 
 const Project: FC<ProjectProps> = ({
   title,
-  description,
   categories,
+  description,
   technologies,
   images,
   order,
@@ -52,10 +52,15 @@ const Project: FC<ProjectProps> = ({
 
   function separateList(list: string[]) {
     let innerHTML: JSX.Element[] = [];
-    for (const word of list) {
-      innerHTML.push(<>{word}</>);
+    for (let i = 0; i < list.length; i++) {
+      const word = list[i];
+      innerHTML.push(<span key={word}>{word}</span>);
       if (word !== list[list.length - 1]) {
-        innerHTML.push(<span className="px-2">•</span>);
+        innerHTML.push(
+          <span key={`dot${i}`} className="px-2">
+            •
+          </span>
+        );
       }
     }
     return <>{innerHTML}</>;
@@ -63,9 +68,9 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <div
-      className={`${
-        order === "right" ? "flex-row-reverse " : ""
-      }flex gap-10 py-16 flex-wrap justify-center`}
+      className={`flex gap-10 py-14 flex-wrap justify-center${
+        order === "right" ? " flex-row-reverse " : ""
+      }`}
     >
       {text()}
       {mockups()}

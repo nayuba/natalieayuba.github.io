@@ -9,13 +9,13 @@ module.exports = {
   ],
   theme: {
     colors: {
+      white: colors.white,
       transparent: "transparent",
       current: "currentColor",
       primary: "#CEE9EB",
       secondary: "#CB80C6",
       "secondary-darker": "#9D4097",
       "dark-grey": "#313035",
-      white: colors.white,
       "natural-hair-soc-blue": "#DAEDF2",
       "stripped-sets-purple": "#A1539C",
     },
@@ -33,7 +33,13 @@ module.exports = {
         ],
       },
       transitionTimingFunction: {
-        "icon-in-out": "cubic-bezier(0.6, 0.05, 0.3, 1)",
+        "slow-in-out": "cubic-bezier(0.6, 0.05, 0.3, 1)",
+      },
+      content: {
+        straight: "url('/underlines/straight.svg')",
+        "less-straight": "url('/underlines/less-straight.svg')",
+        wonky: "url('/underlines/wonky.svg')",
+        "very-wonky": "url('/underlines/very-wonky.svg')",
       },
     },
   },
