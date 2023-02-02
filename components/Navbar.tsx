@@ -34,8 +34,8 @@ const Navbar: FC = () => {
     <nav>
       <ul className="hidden md:flex items-center gap-6 text-base lowercase font-semibold">
         {navLinks.map((navLink) => (
-          <li key={navLink.title} className="relative group/nav-link">
-            <a href={navLink.href} className={`p-4 after:content-${navLink.underline} after:absolute after:block after:left-0 after:right-0 after:top-6 after:opacity-0 after:group-hover/nav-link:translate-y-1 after:group-hover/nav-link:opacity-100 after:duration-300 after:transition-all ease-in`}>
+          <li key={navLink.title} className="relative">
+            <a href={navLink.href} className={`p-4 after:content-${navLink.underline} after:absolute after:block after:left-0 after:right-0 after:top-6 after:opacity-0 hover:after:translate-y-1 hover:after:opacity-100 after:duration-150 after:transition-all after:ease-linear`}>
               {navLink.title}
             </a>
           </li>
@@ -53,7 +53,7 @@ const Navbar: FC = () => {
             <li key={navLink.title}>
               <a
                 href={navLink.href}
-                className="hover:text-secondary-darker transition duration-200 ease-slow-in-out"
+                className="hover:text-secondary-dark transition duration-200 ease-slow-in-out"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navLink.title}
@@ -62,7 +62,7 @@ const Navbar: FC = () => {
           ))}
           <SocialMediaNav large />
         </ul>
-        <div className="fixed flex items-center h-[80px] right-6 text-2xl hover:text-secondary-darker transition-colors duration-200 ease-slow-in-out">
+        <div className="fixed flex items-center h-[80px] right-6 text-2xl hover:text-secondary-dark transition-colors duration-200 ease-slow-in-out">
           <Hamburger
             toggled={isMenuOpen}
             toggle={setIsMenuOpen}

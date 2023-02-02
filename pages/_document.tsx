@@ -21,7 +21,7 @@ class MainDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="text-dark-grey">
+        <body className="text-dark-grey selection:bg-secondary selection:text-secondary-darker">
           <Main />
           <NextScript />
         </body>
