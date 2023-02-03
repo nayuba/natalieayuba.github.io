@@ -38,10 +38,11 @@ const Project: FC<ProjectProps> = ({
   const mockups = () => (
     <div className="flex gap-4">
       {images.map(([src, alt]) => (
-        <div key={src} className={`relative ${images.length === 1 ? "w-[400px]" : "w-[192px] h-[395px]"}`}>
+        <div key={src} className={`relative`}>
           <Image
             src={src}
-            fill
+            width={images.length === 1 ? 400 : 192}
+            height={images.length === 1 ? 200 : 395}
             alt={alt}
           />
         </div>

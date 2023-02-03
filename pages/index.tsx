@@ -32,7 +32,7 @@ export default function Home() {
       <div className="bg-gradient-to-b from-primary to-white">
         <main className="px-6 md:px-10 flex flex-col items-center">
           {/* Banner */}
-          <section className="w-full flex flex-wrap lg:flex-nowrap justify-between items-center gap-10 pt-28 max-width">
+          <section className="w-full flex flex-wrap justify-between items-center gap-10 pt-28 max-w-[1400px] lg:flex-nowrap lg:h-screen lg:items-center lg:pt-0">
             <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
               <H3
@@ -55,11 +55,11 @@ export default function Home() {
 
           {/* About */}
           <section
-            className="flex flex-col justify-center items-center pt-28"
+            className="flex flex-col justify-center items-center pt-28 lg:h-screen lg:justify-center"
             id="about"
           >
             <H2 text="About Me" />
-            <div className="text-justify max-w-lg">
+            <div className="text-justify max-w-xl">
               {[
                 "Hi there! I’m Natalie, a full-stack software developer working remotely in Norwich, England. At work, I spend my time designing, coding, and testing, and try to focus my role on creating user-friendly interfaces.",
                 "I consider myself a multi-disciplinarian and dabble in many different forms of creative work including graphic design, illustration, and mobile app development.",
