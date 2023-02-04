@@ -7,17 +7,17 @@ const navLinks = [
   {
     title: "About",
     href: "#about",
-    underline: "straight",
+    underline: "after:content-straight",
   },
   {
     title: "Projects",
     href: "#projects",
-    underline: "less-straight",
+    underline: "after:content-less-straight",
   },
   {
     title: "Contact",
     href: "#contact",
-    underline: "wonky",
+    underline: "after:content-wonky",
   },
 ];
 
@@ -35,7 +35,7 @@ const Navbar: FC = () => {
       <ul className="hidden md:flex items-center gap-6 text-base lowercase font-semibold">
         {navLinks.map((navLink) => (
           <li key={navLink.title} className="relative">
-            <a href={navLink.href} className={`p-4 after:content-${navLink.underline} after:absolute after:block after:left-0 after:right-0 after:top-6 after:opacity-0 hover:after:translate-y-1 hover:after:opacity-100 after:duration-150 after:transition-all after:ease-linear`}>
+            <a href={navLink.href} className={`p-4 ${navLink.underline} after:absolute after:block after:left-0 after:right-0 after:top-6 after:opacity-0 hover:after:translate-y-1 hover:after:opacity-100 after:duration-150 after:transition-all after:ease-in`}>
               {navLink.title}
             </a>
           </li>
@@ -62,6 +62,7 @@ const Navbar: FC = () => {
           ))}
           <SocialMediaNav large />
         </ul>
+        {/* Hamburger menu */}
         <div className="fixed flex items-center h-[80px] right-6 text-2xl hover:text-secondary-dark transition-colors duration-200 ease-slow-in-out">
           <Hamburger
             toggled={isMenuOpen}

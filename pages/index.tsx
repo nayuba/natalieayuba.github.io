@@ -7,6 +7,7 @@ import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
@@ -35,10 +36,7 @@ export default function Home() {
           <section className="w-full flex flex-wrap justify-between items-center gap-10 pt-28 max-w-[1400px] lg:flex-nowrap lg:h-screen lg:items-center lg:pt-0">
             <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
-              <H3
-                text="I'm a developer and designer."
-                className="font-normal"
-              />
+              <H3 text="I'm a developer and designer" className="font-normal" />
               <BodyText
                 text="And I like to make things look nice on screens :)"
                 className="leading-normal"
@@ -59,7 +57,7 @@ export default function Home() {
             id="about"
           >
             <H2 text="About Me" />
-            <div className="text-justify max-w-xl">
+            <div className="text-justify max-w-lg">
               {[
                 "Hi there! I’m Natalie, a full-stack software developer working remotely in Norwich, England. At work, I spend my time designing, coding, and testing, and try to focus my role on creating user-friendly interfaces.",
                 "I consider myself a multi-disciplinarian and dabble in many different forms of creative work including graphic design, illustration, and mobile app development.",
@@ -73,7 +71,7 @@ export default function Home() {
           {/* Projects */}
           <section
             id="projects"
-            className="flex flex-col items-center pt-28 pb-14"
+            className="flex flex-col items-center pt-28 pb-14 lg:pb-28"
           >
             <H2 text="My Projects" />
             <Project
@@ -89,6 +87,10 @@ export default function Home() {
                 ["/past-calendar.png", "Past app mockup"],
               ]}
               order="right"
+              link={{
+                text: "View more",
+                href: "https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit?usp=sharing",
+              }}
             />
             <div className="flex flex-col items-center pt-14">
               <H3 text="Logos" className="lowercase" />
@@ -130,12 +132,7 @@ export default function Home() {
                 </>
               }
             />
-            <a
-              href="mailto:natalieayuba@hotmail.com"
-              className="bg-white font-semibold border border-black px-7 py-3 mt-10 hover:shadow-crisp duration-200 ease-linear"
-            >
-              Say hi
-            </a>
+            <Button text="Say hi" href="mailto:natalieayuba@hotmail.com" className="mt-10" />
           </div>
           <div className="flex flex-col items-center gap-5 py-10 mt-10">
             <SocialMediaNav includeTooltips />

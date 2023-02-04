@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import { BodyText, H3, SecondaryText } from "./Text";
 import Image from "next/image";
+import Button from "./Button";
+import { FaGithub } from "react-icons/fa";
 
 export interface ProjectProps {
   title: string;
@@ -9,6 +11,8 @@ export interface ProjectProps {
   technologies: string[];
   images: string[][];
   order: string;
+  link?: { text: string; href: string };
+  githubLink?: string;
 }
 
 const Project: FC<ProjectProps> = ({
@@ -18,34 +22,39 @@ const Project: FC<ProjectProps> = ({
   technologies,
   images,
   order,
+  link,
+  githubLink,
 }) => {
   const text = () => (
     <div className="flex flex-col gap-2 justify-center max-w-lg">
       <H3 text={title} />
       <SecondaryText text={separateList(categories)} />
       <BodyText text={description} />
-      <SecondaryText
-        text={
-          <>
-            <span className="pr-2">🛠️</span>
-            {separateList(technologies)}
-          </>
-        }
-      />
+      <SecondaryText text={separateList(technologies)} />
+      <div className="flex items-center gap-4 mt-4">
+        {link && <Button text={link.text} href={link.href} external />}
+        {githubLink && (
+          <Button
+            text="View on Github"
+            href={githubLink}
+            external
+            iconRight={<FaGithub />}
+          />
+        )}
+      </div>
     </div>
   );
 
   const mockups = () => (
     <div className="flex gap-4">
       {images.map(([src, alt]) => (
-        <div key={src} className={`relative`}>
-          <Image
-            src={src}
-            width={images.length === 1 ? 400 : 192}
-            height={images.length === 1 ? 200 : 395}
-            alt={alt}
-          />
-        </div>
+        <Image
+          key={src}
+          src={src}
+          width={images.length === 1 ? 512 : 240}
+          height={images.length === 1 ? 200 : 395}
+          alt={alt}
+        />
       ))}
     </div>
   );
