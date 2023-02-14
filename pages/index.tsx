@@ -1,7 +1,7 @@
 import LogoImage from "@/components/LogoImage";
 import Project from "@/components/Project";
 import SocialMediaNav from "@/components/SocialMediaNav";
-import { BodyText, H1, H2, H3, SecondaryText } from "@/components/Text";
+import { BodyText, H1, H2, H3, LinkText, SecondaryText } from "@/components/Text";
 import Head from "next/head";
 import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -77,10 +77,7 @@ export default function Home() {
             <Project
               title="Past app"
               categories={["App Design", "App Development", "Logo Design"]}
-              description="PAST is a fatigue tracking app for users with post-stroke
-              fatigue, providing a convenient method of logging your daily
-              physical activity and resulting fatigue levels to be later
-              shared with healthcare providers."
+              description={<>PAST is a fatigue tracking app for users with post-stroke fatigue, providing a convenient method to log daily physical activity and resulting fatigue levels using <LinkText href="/" text="guided graded exercise therapy"/>.</>}
               technologies={["React Native", "Node.js", "Expo"]}
               images={[
                 ["/past-login.png", "Past app mockup"],
@@ -132,7 +129,11 @@ export default function Home() {
                 </>
               }
             />
-            <Button text="Say hi" href="mailto:natalieayuba@hotmail.com" className="mt-10" />
+            <Button
+              text="Say hi"
+              href="mailto:natalieayuba@hotmail.com"
+              className="mt-10"
+            />
           </div>
           <div className="flex flex-col items-center gap-5 py-10 mt-10">
             <SocialMediaNav includeTooltips />

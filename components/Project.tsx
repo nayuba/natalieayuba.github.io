@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 export interface ProjectProps {
   title: string;
   categories: string[];
-  description: string;
+  description: string | JSX.Element;
   technologies: string[];
   images: string[][];
   order: string;
