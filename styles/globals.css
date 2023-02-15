@@ -44,6 +44,6 @@ body {
   }
 
   .btn {
-    @apply bg-white font-semibold border border-dark-grey px-5 py-3 w-fit min-w-[98px] flex items-center justify-center gap-2 hover:shadow-crisp duration-200 ease-linear;
+    @apply bg-white font-semibold border border-dark-grey px-5 py-3 w-fit min-w-[98px] flex items-center justify-center gap-2 hover:shadow-crisp duration-100 ease-linear;
   }
 }
