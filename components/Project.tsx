@@ -9,7 +9,7 @@ export interface ProjectProps {
   categories: string[];
   description: string | JSX.Element;
   technologies: string[];
-  images: string[][];
+  images: { src: string; alt: string; width: number; height: number }[];
   order: string;
   link?: { text: string; href: string };
   githubLink?: string;
@@ -46,15 +46,11 @@ const Project: FC<ProjectProps> = ({
   );
 
   const mockups = () => (
-    <div className="flex gap-4">
-      {images.map(([src, alt]) => (
-        <Image
-          key={src}
-          src={src}
-          width={images.length === 1 ? 512 : 240}
-          height={images.length === 1 ? 200 : 395}
-          alt={alt}
-        />
+    <div className="flex gap-4 max-w-lg">
+      {images.map((image: any) => (
+        <div key={image.src}>
+          <Image src={image.src} width={image.width} height={image.height} alt={image.alt} />
+        </div>
       ))}
     </div>
   );

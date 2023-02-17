@@ -14,17 +14,18 @@ export default function Home() {
     <>
       <Head>
         <title>Natalie Ayuba</title>
-        <meta name="description" content="Full-stack developer and designer." />
+        <meta name="description" content="Full-stack developer and designer" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/avatar.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <header className="bg-primary flex flex-col items-center fixed left-0 right-0 top-0 z-10 px-6 md:px-10">
         <div className="h-[80px] flex justify-between items-center w-full max-width">
-          <Link href="/" className="relative h-14 w-14">
+          <Link href="/" className="w-9 flex">
             <Image
-              src="/avatar.png"
-              fill
-              alt="A little animated self-portrait!"
+              src="/logo.svg"
+              width={57}
+              height={77}
+              alt="A little self-portrait!"
             />
           </Link>
           <Navbar />
@@ -32,18 +33,19 @@ export default function Home() {
       </header>
       <div className="bg-gradient-to-b from-primary to-white">
         <main className="px-6 md:px-10 flex flex-col items-center">
+
           {/* Banner */}
           <section className="w-full flex flex-wrap justify-between items-center gap-10 pt-28 max-w-[1400px] lg:flex-nowrap lg:h-screen lg:items-center lg:pt-0">
             <div className="flex flex-col gap-4 lowercase md:flex-none">
               <H1 text="Hi, I'm Natalie!" />
-              <H3 text="I'm a developer and designer" className="font-normal" />
+              <H3 text="I'm a developer and designer" className="font-normal md:text-5xl" />
               <BodyText
                 text="And I like to make things look nice on screens :)"
-                className="leading-normal"
+                className="text-lg"
               />
             </div>
             <Image
-              src="/avatar.png"
+              src="/logo-square.svg"
               width="500"
               height="500"
               alt="A little illustrated self-portrait!"
@@ -53,7 +55,7 @@ export default function Home() {
 
           {/* About */}
           <section
-            className="flex flex-col justify-center items-center pt-28 lg:h-screen lg:justify-center"
+            className="flex flex-col justify-center items-center pt-28 md:pb-28 lg:h-screen lg:justify-center"
             id="about"
           >
             <H2 text="About Me" />
@@ -71,27 +73,27 @@ export default function Home() {
           {/* Projects */}
           <section
             id="projects"
-            className="flex flex-col items-center pt-28 pb-14 lg:pb-28"
+            className="flex flex-col items-center pt-28 md:pb-28"
           >
             <H2 text="My Projects" />
             <Project
-              title="Past app"
+              title="PAST app"
               categories={["App Design", "App Development", "Logo Design"]}
               description={<>PAST is a fatigue tracking app for users with post-stroke fatigue, providing a convenient method to log daily physical activity and resulting fatigue levels using <LinkText href="/" text="guided graded exercise therapy"/>.</>}
               technologies={["React Native", "Node.js", "Expo"]}
               images={[
-                ["/past-login.png", "Past app mockup"],
-                ["/past-calendar.png", "Past app mockup"],
+                {src: "/past-login.png", alt: "Past app mockup", width: 461, height: 930},
+                {src: "/past-calendar.png", alt: "Past app mockup", width: 461, height: 930},
               ]}
               order="right"
               link={{
-                text: "View more",
+                text: "Learn more",
                 href: "https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit?usp=sharing",
               }}
             />
             <div className="flex flex-col items-center pt-14">
               <H3 text="Logos" className="lowercase" />
-              <div className="flex flex-wrap justify-center pt-14 gap-2">
+              <div className="flex flex-wrap justify-center pt-12 gap-2">
                 {[
                   [
                     "Stripped Sets Logo",
@@ -118,12 +120,12 @@ export default function Home() {
         </main>
 
         <footer className="px-6 text-center">
-          <div id="contact" className="flex flex-col items-center pb-14 pt-28">
+          <div id="contact" className="flex flex-col items-center py-28">
             <H2 text="Get In Touch" />
             <BodyText
               text={
                 <>
-                  I occasionally do freelance work.
+                  I occasionally take on freelance opportunities.
                   <br />
                   Feel free to send me a message - my inbox is always open!
                 </>
@@ -135,7 +137,7 @@ export default function Home() {
               className="mt-10"
             />
           </div>
-          <div className="flex flex-col items-center gap-5 py-10 mt-10">
+          <div className="flex flex-col items-center gap-5 py-10 mt-14">
             <SocialMediaNav includeTooltips />
             <SecondaryText text="Designed and Developed by Natalie Ayuba" />
           </div>
