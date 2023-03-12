@@ -11,9 +11,13 @@ interface LinkTextProps extends TextProps {
   external?: boolean;
 }
 
-export const H1: FC<TextProps> = ({ text }) => <h1 className="h1">{text}</h1>;
+export const H1: FC<TextProps> = ({ text, className = "" }) => (
+  <h1 className={"h1" + appendClassName(className)}>{text}</h1>
+);
 
-export const H2: FC<TextProps> = ({ text }) => <h2 className="h2">{text}</h2>;
+export const H2: FC<TextProps> = ({ text, className = "" }) => (
+  <h2 className={"h2" + appendClassName(className)}>{text}</h2>
+);
 
 export const H3: FC<TextProps> = ({ text, className = "" }) => (
   <h3 className={"h3" + appendClassName(className)}>{text}</h3>
