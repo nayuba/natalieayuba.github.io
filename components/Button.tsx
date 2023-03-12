@@ -1,7 +1,7 @@
 import { appendClassName } from "@/utils/classNameUtils";
 import React, { FC } from "react";
 
-export interface IconProps {
+export interface ButtonProps {
   text: string;
   href: string;
   iconLeft?: JSX.Element;
@@ -10,7 +10,7 @@ export interface IconProps {
   external?: boolean;
 }
 
-const Button: FC<IconProps> = ({
+const Button: FC<ButtonProps> = ({
   text,
   href,
   iconLeft,
