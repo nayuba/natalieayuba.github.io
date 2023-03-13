@@ -72,20 +72,21 @@ const Navbar: FC = () => {
             <div
               className={
                 "w-full h-[0.3rem] bg-dark-grey group-hover:bg-secondary-dark rounded-sm transition-all duration-200 ease-slow-in-out" +
-                (isMenuOpen && " rotate-45 translate-y-3")
+                (isMenuOpen ? " rotate-45 translate-y-3" : "")
               }
             ></div>
             <div
               className={
                 "w-full h-[0.3rem] bg-dark-grey group-hover:bg-secondary-dark rounded-sm transition-all duration-200 ease-slow-in-out" +
-                (isMenuOpen &&
-                  " translate-x-[-50px] bg-transparent group-hover:bg-transparent")
+                (isMenuOpen
+                  ? " translate-x-[-50px] bg-transparent group-hover:bg-transparent"
+                  : "")
               }
             ></div>
             <div
               className={
                 "w-full h-[0.3rem] bg-dark-grey group-hover:bg-secondary-dark rounded-sm transition-all duration-200 ease-slow-in-out" +
-                (isMenuOpen && " -rotate-45 -translate-y-2.5")
+                (isMenuOpen ? " -rotate-45 -translate-y-2.5" : "")
               }
             ></div>
           </button>
