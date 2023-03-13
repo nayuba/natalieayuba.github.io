@@ -1,34 +1,15 @@
 import LogoImage from "@/components/LogoImage";
 import Project from "@/components/Project";
-import {
-  BodyText,
-  H1,
-  H2,
-  H3,
-  LinkText,
-} from "@/components/Text";
+import { BodyText, H1, H2, H3, LinkText } from "@/components/Text";
 import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import Navbar from "@/components/Navbar";
-import Link from "next/link";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <header className="bg-primary flex flex-col items-center fixed left-0 right-0 top-0 z-10 px-6 md:px-10">
-        <div className="h-[80px] flex justify-between items-center w-full max-width">
-          <Link href="/" className="w-9 flex">
-            <Image
-              src="/logo.svg"
-              width={57}
-              height={77}
-              alt="A little self-portrait!"
-            />
-          </Link>
-          <Navbar />
-        </div>
-      </header>
+      <Header />
       <main className="px-6 md:px-10 flex flex-col items-center">
         {/* Banner */}
         <section className="w-full flex flex-wrap justify-between items-center gap-10 pt-28 max-w-[1400px] lg:flex-nowrap lg:h-screen lg:items-center lg:pt-0">
@@ -138,5 +119,4 @@ export default function Home() {
       <Footer includeContact />
     </>
   );
-  
 }

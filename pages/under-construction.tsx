@@ -3,14 +3,13 @@ import { BodyText, H1 } from "@/components/Text";
 
 export default function UnderConstruction() {
   return (
-    <div>
-      <main className="px-6 md:px-10 h-screen flex flex-col items-center justify-center">
+    <div className="h-screen">
+      <main className="px-6 md:px-10 h-full flex flex-col items-center justify-center">
         <div className="flex flex-col gap-3 items-center max-w-2xl text-center">
           <H1
             text={
               <>
-                <span className="text-4xl">Sorry!</span>
-                <br />
+                <span className="text-6xl block mb-2">Sorry!</span>
                 Website under construction
               </>
             }

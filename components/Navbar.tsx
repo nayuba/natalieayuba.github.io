@@ -6,17 +6,17 @@ import SocialMediaNav from "./SocialMediaNav";
 const navLinks = [
   {
     title: "About",
-    href: "#about",
+    href: "/#about",
     underline: "after:content-straight",
   },
   {
     title: "Projects",
-    href: "#projects",
+    href: "/#projects",
     underline: "after:content-less-straight",
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "/#contact",
     underline: "after:content-wonky",
   },
 ];
