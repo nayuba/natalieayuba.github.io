@@ -8,9 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Natalie Ayuba</title>
-        <meta name="description" content="Full-stack developer and designer" />
+        <meta name="description" content="Natalie Ayuba is a full-stack developer and designer." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <Component {...pageProps} />
     </>
