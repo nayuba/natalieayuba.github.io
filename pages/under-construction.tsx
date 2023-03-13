@@ -1,9 +1,14 @@
 import Footer from "@/components/Footer";
 import { BodyText, H1 } from "@/components/Text";
+import Head from "next/head";
 
 export default function UnderConstruction() {
   return (
-    <div className="h-screen">
+    <>
+    <Head>
+      <title>Natalie Ayuba • Website Under Construction</title>
+    </Head>
+    <div className="h-screen flex flex-col pt-20">
       <main className="px-6 md:px-10 h-full flex flex-col items-center justify-center">
         <div className="flex flex-col gap-3 items-center max-w-2xl text-center">
           <H1
@@ -21,15 +26,8 @@ export default function UnderConstruction() {
           />
         </div>
       </main>
-      <Footer className="absolute bottom-0 w-full" />
+      <Footer />
     </div>
+    </>
   );
-}
-
-export async function getServerSideProps() {
-  return {
-    props: {
-      title: "Website Under Construction",
-    },
-  };
 }

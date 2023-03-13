@@ -10,9 +10,10 @@ export default function PageNotFound() {
       <Head>
         <title>Natalie Ayuba • 404 Page Not Found</title>
       </Head>
-      <Header />
-      <div className="h-screen pt-[80px] flex flex-col items-center justify-center">
-          <div className="px-6 md:px-10 h-screen flex flex-col items-center justify-center text-center">
+      <div className="h-screen flex flex-col">
+      <Header className="sticky" />
+        <main className="px-6 md:px-10 h-full flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center text-center">
             <H1
               text={
                 <>
@@ -24,7 +25,8 @@ export default function PageNotFound() {
             />
             <Button text="Go home" href="/" className="mt-12" />
           </div>
-        <Footer className="mt-auto" />
+        </main>
+        <Footer />
       </div>
     </>
   );
