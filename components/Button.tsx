@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = ({
   href,
   iconLeft,
   iconRight,
-  className = "",
+  className,
   external = false,
 }) => (
   <a

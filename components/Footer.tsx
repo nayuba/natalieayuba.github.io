@@ -9,7 +9,7 @@ export interface FooterProps {
   className?: string;
 }
 
-const Footer: FC<FooterProps> = ({ includeContact = false, className = ""}) => (
+const Footer: FC<FooterProps> = ({ includeContact = false, className}) => (
   <footer className={"px-6 text-center" + appendClassName(className)}>
     {includeContact && (
       <div id="contact" className="flex flex-col items-center py-28">
