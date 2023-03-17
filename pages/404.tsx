@@ -18,7 +18,7 @@ export default function PageNotFound() {
               text={
                 <>
                   <span className="text-6xl block mb-2">Ooops...</span>
-                  That page doesn&apos;t exist
+                  This page doesn&apos;t exist
                 </>
               }
               className="text-3xl"
