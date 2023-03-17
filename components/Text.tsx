@@ -31,19 +31,13 @@ export const SecondaryText: FC<TextProps> = ({ text }) => (
   <p className={"secondary-text"}>{text}</p>
 );
 
-export const LinkText: FC<LinkTextProps> = ({ text, href, external }) => {
-  const underlines = ["straight", "less-straight", "wonky", "very-wonky"];
-  const randomUnderline =
-    underlines[Math.floor(Math.random() * underlines.length)];
-
-  return (
-    <a
-      href={href}
-      target={external ? "_blank" : ""}
-      rel={external ? "noreferrer" : ""}
-      className={`link-text after:content-${randomUnderline}`}
-    >
-      {text}
-    </a>
-  );
-};
+export const LinkText: FC<LinkTextProps> = ({ text, href, external }) => (
+  <a
+    href={href}
+    target={external ? "_blank" : ""}
+    rel={external ? "noreferrer" : ""}
+    className={`link-text hover:underline`}
+  >
+    {text}
+  </a>
+);

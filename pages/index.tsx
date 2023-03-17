@@ -1,4 +1,3 @@
-import LogoImage from "@/components/LogoImage";
 import Project from "@/components/Project";
 import { BodyText, H1, H2, H3, LinkText } from "@/components/Text";
 import Image from "next/image";
@@ -39,7 +38,39 @@ export default function Home() {
           id="about"
         >
           <H2 text="About Me" />
-          <div className="text-justify max-w-lg">
+          <div className="relative text-justify max-w-lg">
+            <div className="hidden xl:block absolute -top-10 -left-[70%] rotate-6">
+              <Image
+                src="/computer.svg"
+                width="242"
+                height="162"
+                alt="A little illustrated computer!"
+              />
+            </div>
+            <div className="hidden xl:block absolute -bottom-10 -left-[40%] -rotate-6">
+              <Image
+                src="/sims.svg"
+                width="41"
+                height="100"
+                alt="A little illustrated sims diamond!"
+              />
+            </div>
+            <div className="hidden xl:block absolute -top-10 -right-[45%] -rotate-6">
+              <Image
+                src="/yt.svg"
+                width="77"
+                height="39"
+                alt="A little illustrated YouTube logo!"
+              />
+            </div>
+            <div className="hidden xl:block absolute -bottom-10 -right-[45%] -rotate-6">
+              <Image
+                src="/guitar.svg"
+                width="153"
+                height="184"
+                alt="A little illustrated guitar!"
+              />
+            </div>
             {[
               "Hi there! I’m Natalie, a full-stack software developer working remotely in Norwich, England. At work, I spend my time designing, coding, and testing, and try to focus my role on creating user-friendly interfaces.",
               "I consider myself a multi-disciplinarian and dabble in many different forms of creative work including graphic design, illustration, and mobile app development.",
@@ -64,7 +95,12 @@ export default function Home() {
                 PAST is a fatigue tracking app for users with post-stroke
                 fatigue, providing a convenient method to log daily physical
                 activity and resulting fatigue levels using{" "}
-                <LinkText href="/" text="guided graded exercise therapy" />.
+                <LinkText
+                  href="https://www.researchgate.net/publication/256293990_Graded_Exercise_Therapy_A_self-help_guide_for_those_with_chronic_fatigue_syndromemyalgic_encephalomyelitis"
+                  text="guided graded exercise therapy"
+                  external
+                />
+                .
               </>
             }
             technologies={["React Native", "Node.js", "Expo"]}
@@ -88,31 +124,6 @@ export default function Home() {
               href: "https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit?usp=sharing",
             }}
           />
-          <div className="flex flex-col items-center pt-14">
-            <H3 text="Logos" className="lowercase" />
-            <div className="flex flex-wrap justify-center pt-12 gap-2">
-              {[
-                [
-                  "Stripped Sets Logo",
-                  "/stripped-sets-logo.png",
-                  "bg-stripped-sets-purple",
-                ],
-                [
-                  "What You Sayin' UEA? Logo",
-                  "/what-you-sayin-uea-logo.png",
-                  "bg-white",
-                ],
-                [
-                  "UEA Natural Hair Society Logo",
-                  "/uea-natural-hair-society-logo.png",
-                  "bg-natural-hair-soc-blue",
-                ],
-                ["PAST Logo", "/past-logo.png", "bg-white"],
-              ].map(([alt, src, bgColor]) => (
-                <LogoImage key={src} alt={alt} src={src} bgColor={bgColor} />
-              ))}
-            </div>
-          </div>
         </section>
       </main>
       <ScrollToTopButton />
