@@ -30,7 +30,7 @@ const Footer: FC<FooterProps> = ({ includeContact = false, className}) => (
         />
       </div>
     )}
-    <div className="flex flex-col items-center gap-5 py-10 mt-14">
+    <div className="flex flex-col items-center gap-5 py-10 md:mt-14">
       <SocialMediaNav includeTooltips />
       <SecondaryText text="Designed and Developed by Natalie Ayuba" />
     </div>

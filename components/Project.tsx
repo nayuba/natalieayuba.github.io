@@ -73,7 +73,7 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <div
-      className={`flex gap-10 py-14 flex-wrap justify-center${
+      className={`flex gap-10 pt-14 md:pb-14 flex-wrap justify-center${
         order === "right" ? " flex-row-reverse " : ""
       }`}
     >
