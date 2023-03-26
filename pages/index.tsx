@@ -25,8 +25,8 @@ export default function Home() {
           </div>
           <Image
             src="/logo-square.svg"
-            width="500"
-            height="500"
+            width={500}
+            height={500}
             alt="A little illustrated self-portrait!"
             className="flex-auto lg:flex-initial"
           />
