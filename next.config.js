@@ -4,8 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/nextjs-pages",
-  assetPrefix: "nextjs-pages",
 };
 
 module.exports = nextConfig;
