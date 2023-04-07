@@ -11,8 +11,8 @@ export default function Home() {
       <Header />
       <main className="px-6 md:px-10 flex flex-col items-center">
         {/* Banner */}
-        <section className="w-full flex flex-wrap justify-between items-center gap-10 pt-28 max-w-[1400px] lg:flex-nowrap lg:h-screen lg:items-center lg:pt-0">
-          <div className="flex flex-col gap-4 lowercase md:flex-none">
+        <section className="w-full flex items-center flex-wrap pt-28 gap-20 max-w-[1400px] md:min-h-screen banner-breakpoint:pt-0 md:content-center">
+          <div className="flex flex-col gap-4 lowercase">
             <H1 text="Hi, I'm Natalie!" />
             <H3
               text="I'm a developer and designer"
@@ -23,18 +23,19 @@ export default function Home() {
               className="text-lg"
             />
           </div>
-          <Image
-            src="/logo-square.svg"
-            width={500}
-            height={500}
-            alt="A little illustrated self-portrait!"
-            className="flex-auto lg:flex-initial"
-          />
+          <div className="flex justify-center grow">
+            <Image
+              src="/logo.svg"
+              width={400}
+              height={400}
+              alt="A little illustrated self-portrait!"
+            />
+          </div>
         </section>
 
         {/* About */}
         <section
-          className="flex flex-col justify-center items-center pt-28 md:pb-28 lg:h-screen lg:justify-center"
+          className="flex flex-col justify-center items-center pt-28 md:pb-28 md:h-screen lg:justify-center"
           id="about"
         >
           <H2 text="About Me" />
@@ -72,8 +73,8 @@ export default function Home() {
               />
             </div>
             {[
-              "Hi there! I’m Natalie, a full-stack software developer working remotely in Norwich, England. At work, I spend my time designing, coding, and testing, and try to focus my role on creating user-friendly interfaces.",
-              "I consider myself a multi-disciplinarian and dabble in many different forms of creative work including graphic design, illustration, and mobile app development.",
+              "Hi there! I’m Natalie, a full-stack software developer and occasional designer with my main focus being creating accessible and user-friendly interfaces. ",
+              "I've had experience in website and mobile app development, UI/UX design, and dabble in many other forms of creative work including graphic design and illustration.",
               "Outside of work, I enjoy playing the guitar, world-building in the Sims, and watching an unhealthy amount of movie commentaries on YouTube.",
             ].map((paragraph: string) => (
               <BodyText key={paragraph} className="mb-3" text={paragraph} />
@@ -88,6 +89,7 @@ export default function Home() {
         >
           <H2 text="My Projects" />
           <Project
+            className="pt-4 md:pt-14"
             title="PAST app"
             categories={["App Design", "App Development", "Logo Design"]}
             description={

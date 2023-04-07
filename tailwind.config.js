@@ -21,6 +21,13 @@ module.exports = {
       "natural-hair-soc-blue": "#DAEDF2",
       "stripped-sets-purple": "#A1539C",
     },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "banner-breakpoint": "1260px",
+    },
     extend: {
       fontFamily: {
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],

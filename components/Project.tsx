@@ -3,6 +3,7 @@ import { BodyText, H3, SecondaryText } from "./Text";
 import Image from "next/image";
 import Button from "./Button";
 import { FaGithub } from "react-icons/fa";
+import { appendClassName } from "@/utils/classNameUtils";
 
 export interface ProjectProps {
   title: string;
@@ -13,6 +14,7 @@ export interface ProjectProps {
   order: string;
   link?: { text: string; href: string };
   githubLink?: string;
+  className?: string;
 }
 
 const Project: FC<ProjectProps> = ({
@@ -24,6 +26,7 @@ const Project: FC<ProjectProps> = ({
   order,
   link,
   githubLink,
+  className,
 }) => {
   const text = () => (
     <div className="flex flex-col gap-2 justify-center max-w-lg">
@@ -49,7 +52,12 @@ const Project: FC<ProjectProps> = ({
     <div className="flex gap-4 max-w-lg">
       {images.map((image: any) => (
         <div key={image.src}>
-          <Image src={image.src} width={image.width} height={image.height} alt={image.alt} />
+          <Image
+            src={image.src}
+            width={image.width}
+            height={image.height}
+            alt={image.alt}
+          />
         </div>
       ))}
     </div>
@@ -73,9 +81,11 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <div
-      className={`flex gap-10 pt-14 md:pb-14 flex-wrap justify-center${
-        order === "right" ? " flex-row-reverse " : ""
-      }`}
+      className={
+        "flex gap-10 pt-14 md:pb-14 flex-wrap justify-center" +
+        appendClassName(className) +
+        (order === "right" ? " flex-row-reverse" : "")
+      }
     >
       {text()}
       {mockups()}
