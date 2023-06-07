@@ -9,7 +9,7 @@ const nextConfig = {
       {
         source: "/",
         destination: "/under-construction",
-        permanent: false,
+        permanent: true,
       },
     ];
   },
