@@ -2,8 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true
-}
+    unoptimized: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/under-construction",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
