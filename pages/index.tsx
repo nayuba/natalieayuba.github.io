@@ -4,8 +4,16 @@ import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/under-construction");
+  });
+  
   return (
     <>
       <Header />
@@ -14,7 +22,13 @@ export default function Home() {
         <section className="w-full flex items-center flex-wrap pt-28 gap-20 max-w-[1200px] md:min-h-screen banner-breakpoint:pt-0">
           <div className="flex flex-col gap-4 max-w-xl">
             <H1 text="Hi there, I'm Natalie!" />
-            <p className="leading-[170%] text-xl">I&apos;m a <strong className="highlighted">frontend developer</strong> and <strong className="highlighted">UX designer</strong> with a love for creating user interfaces that are useful, equitable, and nice to look at.</p>
+            <p className="leading-[170%] text-xl">
+              I&apos;m a{" "}
+              <strong className="highlighted">frontend developer</strong> and{" "}
+              <strong className="highlighted">UX designer</strong> with a love
+              for creating user interfaces that are useful, equitable, and nice
+              to look at.
+            </p>
           </div>
           <div className="flex justify-center lg:justify-end grow">
             <Image
@@ -33,9 +47,26 @@ export default function Home() {
         >
           <H2 text="About Me" />
           <div className="text-justify max-w-xl">
-            <BodyText className="mb-3" text="Hola, my name is Natalie Ayuba! I'm a developer, designer, and all-round creative. I create with the hopes of building interfaces that help users feel valued, inspired, and represented through their everyday use of technology. I also love to write, illustrate, and make music." />
-            <p className="body-text mb-3">I recently graduated with a Bachelor of Science in Computer Graphics, Imaging and Multimedia from the University of East Anglia, and have since been working remotely as a software developer at <LinkText text="We Are CORTEX" href="https://www.wearecortex.com/" /> where I focus on improving the usability and design of existing systems.</p>
-            <p className="body-text">TL;DR - I&apos;m a nerd and I like making things look nice on screens :)</p>
+            <BodyText
+              className="mb-3"
+              text="Hola, my name is Natalie Ayuba! I'm a developer, designer, and all-round creative. I create with the hopes of building interfaces that help users feel valued, inspired, and represented through their everyday use of technology. I also love to write, illustrate, and make music."
+            />
+            <p className="body-text mb-3">
+              I recently graduated with a Bachelor of Science in Computer
+              Graphics, Imaging and Multimedia from the University of East
+              Anglia, and have since been working remotely as a software
+              developer at{" "}
+              <LinkText
+                text="We Are CORTEX"
+                href="https://www.wearecortex.com/"
+              />{" "}
+              where I focus on improving the usability and design of existing
+              systems.
+            </p>
+            <p className="body-text">
+              TL;DR - I&apos;m a nerd and I like making things look nice on
+              screens :)
+            </p>
           </div>
         </section>
 
@@ -62,7 +93,14 @@ export default function Home() {
                 .
               </>
             }
-            technologies={["React Native", "Expo", "JavaScript", "Node.js", "Express", "AWS Cognito"]}
+            technologies={[
+              "React Native",
+              "Expo",
+              "JavaScript",
+              "Node.js",
+              "Express",
+              "AWS Cognito",
+            ]}
             images={[
               {
                 src: "/past-login.png",
