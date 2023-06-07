@@ -17,7 +17,7 @@ module.exports = {
       "secondary-dark": "#9D4097",
       "secondary-darker": "#4F204C",
       "secondary-alpha-60": "rgba(203, 128, 198, 0.6)",
-      "dark-grey": "#313035",
+      "dark-grey": "#222",
       "natural-hair-soc-blue": "#DAEDF2",
       "stripped-sets-purple": "#A1539C",
     },

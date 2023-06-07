@@ -1,5 +1,5 @@
 import Project from "@/components/Project";
-import { BodyText, H1, H2, H3, LinkText } from "@/components/Text";
+import { BodyText, H1, H2, LinkText } from "@/components/Text";
 import Image from "next/image";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Footer from "@/components/Footer";
@@ -11,23 +11,16 @@ export default function Home() {
       <Header />
       <main className="px-6 md:px-10 flex flex-col items-center">
         {/* Banner */}
-        <section className="w-full flex items-center flex-wrap pt-28 gap-20 max-w-[1400px] md:min-h-screen banner-breakpoint:pt-0 md:content-center">
-          <div className="flex flex-col gap-4 lowercase">
-            <H1 text="Hi, I'm Natalie!" />
-            <H3
-              text="I'm a developer and designer"
-              className="font-normal md:text-5xl"
-            />
-            <BodyText
-              text="And I like to make things look nice on screens :)"
-              className="text-lg"
-            />
+        <section className="w-full flex items-center flex-wrap pt-28 gap-20 max-w-[1200px] md:min-h-screen banner-breakpoint:pt-0">
+          <div className="flex flex-col gap-4 max-w-xl">
+            <H1 text="Hi there, I'm Natalie!" />
+            <p className="leading-[170%] text-xl">I&apos;m a <strong className="highlighted">frontend developer</strong> and <strong className="highlighted">UX designer</strong> with a love for creating user interfaces that are useful, equitable, and nice to look at.</p>
           </div>
-          <div className="flex justify-center grow">
+          <div className="flex justify-center lg:justify-end grow">
             <Image
               src="/logo.svg"
               width={400}
-              height={400}
+              height={530}
               alt="A little illustrated self-portrait!"
             />
           </div>
@@ -39,46 +32,10 @@ export default function Home() {
           id="about"
         >
           <H2 text="About Me" />
-          <div className="relative text-justify max-w-lg">
-            <div className="hidden xl:block absolute -top-10 -left-[70%] rotate-6">
-              <Image
-                src="/computer.svg"
-                width="242"
-                height="162"
-                alt="A little illustrated computer!"
-              />
-            </div>
-            <div className="hidden xl:block absolute -bottom-10 -left-[40%] -rotate-6">
-              <Image
-                src="/sims.svg"
-                width="41"
-                height="100"
-                alt="A little illustrated sims diamond!"
-              />
-            </div>
-            <div className="hidden xl:block absolute -top-10 -right-[45%] -rotate-6">
-              <Image
-                src="/yt.svg"
-                width="77"
-                height="39"
-                alt="A little illustrated YouTube logo!"
-              />
-            </div>
-            <div className="hidden xl:block absolute -bottom-10 -right-[45%] -rotate-6">
-              <Image
-                src="/guitar.svg"
-                width="153"
-                height="184"
-                alt="A little illustrated guitar!"
-              />
-            </div>
-            {[
-              "Hi there! I’m Natalie, a full-stack software developer and occasional designer with my main focus being creating accessible and user-friendly interfaces. ",
-              "I've had experience in website and mobile app development, UI/UX design, and dabble in many other forms of creative work including graphic design and illustration.",
-              "Outside of work, I enjoy playing the guitar, world-building in the Sims, and watching an unhealthy amount of movie commentaries on YouTube.",
-            ].map((paragraph: string) => (
-              <BodyText key={paragraph} className="mb-3" text={paragraph} />
-            ))}
+          <div className="text-justify max-w-xl">
+            <BodyText className="mb-3" text="Hola, my name is Natalie Ayuba! I'm a developer, designer, and all-round creative. I create with the hopes of building interfaces that help users feel valued, inspired, and represented through their everyday use of technology. I also love to write, illustrate, and make music." />
+            <p className="body-text mb-3">I recently graduated with a Bachelor of Science in Computer Graphics, Imaging and Multimedia from the University of East Anglia, and have since been working remotely as a software developer at <LinkText text="We Are CORTEX" href="https://www.wearecortex.com/" /> where I focus on improving the usability and design of existing systems.</p>
+            <p className="body-text">TL;DR - I&apos;m a nerd and I like making things look nice on screens :)</p>
           </div>
         </section>
 
@@ -105,7 +62,7 @@ export default function Home() {
                 .
               </>
             }
-            technologies={["React Native", "Node.js", "Expo"]}
+            technologies={["React Native", "Expo", "JavaScript", "Node.js", "Express", "AWS Cognito"]}
             images={[
               {
                 src: "/past-login.png",
@@ -122,7 +79,7 @@ export default function Home() {
             ]}
             order="right"
             link={{
-              text: "Learn more",
+              text: "View case study",
               href: "https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit?usp=sharing",
             }}
           />

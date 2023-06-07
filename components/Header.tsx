@@ -11,7 +11,7 @@ const Header: FC<{ className?: string }> = ({ className }) => (
       appendClassName(className)
     }
   >
-    <div className="h-[80px] flex justify-between items-center w-full max-width">
+    <div className="h-[80px] flex justify-between items-center w-full">
       <Link href="/" className="w-9 flex">
         <Image
           src="/logo.svg"

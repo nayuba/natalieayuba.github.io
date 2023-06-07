@@ -16,7 +16,7 @@ body {
 
 @layer components {
   .h1 {
-    @apply font-bold text-6xl md:text-8xl;
+    @apply font-bold text-6xl md:text-8xl lowercase;
   } 
 
   .h2 {
@@ -36,7 +36,7 @@ body {
   }
 
   .link-text {
-    @apply font-semibold text-secondary-dark relative after:absolute after:block after:left-0 after:right-0 after:top-4 after:opacity-0 hover:after:translate-y-1 hover:after:opacity-100 after:duration-150 after:transition-all after:ease-linear;
+    @apply text-secondary-dark relative after:absolute after:block after:left-0 after:right-0 after:top-4 after:opacity-0 hover:after:translate-y-1 hover:after:opacity-100 after:duration-150 after:transition-all after:ease-linear;
   }
 
   .max-width {
@@ -45,5 +45,9 @@ body {
 
   .btn {
     @apply bg-white font-semibold border border-dark-grey px-5 py-3 w-fit min-w-[98px] flex items-center justify-center gap-2 hover:shadow-crisp duration-100 ease-linear;
+  }
+
+  .highlighted {
+    @apply bg-secondary-alpha-60 text-secondary-darker;
   }
 }

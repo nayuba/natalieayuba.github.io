@@ -82,7 +82,7 @@ const Project: FC<ProjectProps> = ({
   return (
     <div
       className={
-        "flex gap-10 pt-14 md:pb-14 flex-wrap justify-center" +
+        "flex gap-12 pt-14 md:pb-14 flex-wrap justify-center" +
         appendClassName(className) +
         (order === "right" ? " flex-row-reverse" : "")
       }
